@@ -2,8 +2,7 @@ package com.bobocode;
 
 
 import com.bobocode.configs.ApplicationConfigs;
-import com.bobocode.model.Account;
-import com.bobocode.service.AccountService;
+import com.bobocode.dao.AccountDao;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -13,9 +12,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class ApplicationContextExample_01 {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfigs.class);
-        AccountService accountService = context.getBean(AccountService.class);
+        AccountDao accountDao = context.getBean(AccountDao.class);
 
-        accountService.getAllAccounts().stream().map(Account::getEmail).forEach(System.out::println);
-
+        accountDao.getAllAccounts().forEach(System.out::println);
     }
 }
