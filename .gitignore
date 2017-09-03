@@ -1,5 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
-/.idea
-/gradle
-/gradlew
-/gradlew.bat
+.idea
+**/*.iml
+.gradle/
+gradle/
+gradlew
+gradlew.bat
+**/build
+/jpa-hibernate-advanced-model
