@@ -9,6 +9,10 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class is marked with @{@link Component}, thus Spring container will create an instance of {@link AccountDaoImpl}
+ * class, and will register it the context.
+ */
 @Component
 public class AccountDaoImpl implements AccountDao {
 

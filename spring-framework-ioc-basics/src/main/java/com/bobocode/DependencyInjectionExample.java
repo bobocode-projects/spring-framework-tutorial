@@ -8,12 +8,9 @@ import com.bobocode.service.AccountService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.Map;
 
 import static java.time.Period.between;
-import static java.util.stream.Collectors.toMap;
 
 /**
  * Application context that is built using annotation based configuration.
@@ -23,7 +20,7 @@ import static java.util.stream.Collectors.toMap;
  * It builds application context (creates beans) according to the configurations, on the other hand it injects the beans
  * where it is requested.
  */
-public class ApplicationContextExample_03 {
+public class DependencyInjectionExample {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfigs.class);
         AccountService accountService = context.getBean(AccountService.class);

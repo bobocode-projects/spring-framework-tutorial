@@ -9,7 +9,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 /**
  * Application context that is built using annotation based configuration.
  */
-public class ApplicationContextExample_01 {
+public class JavaConfigsApplicationContextExample {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfigs.class);
         AccountDao accountDao = context.getBean(AccountDao.class);
