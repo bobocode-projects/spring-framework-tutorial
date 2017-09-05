@@ -1,12 +1,14 @@
 package com.bobocode.model;
 
 
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
 
 @Data
-@ToString(exclude = "user")
+@ToString(exclude = {"user", "creationDate"})
 @EqualsAndHashCode(exclude = "id")
 public class Address {
     private Long id;

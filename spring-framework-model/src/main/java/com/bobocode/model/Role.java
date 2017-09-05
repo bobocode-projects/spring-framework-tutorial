@@ -5,7 +5,7 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Data
-@ToString(exclude = "user")
+@ToString(exclude = {"user","creationDate"})
 @EqualsAndHashCode(of = {"roleType", "user"})
 public class Role {
     private Long id;

@@ -17,13 +17,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<User> findAllUsers() {
         return IntStream.rangeClosed(1, 10)
-                .mapToObj(i -> TestDataGenerator.getnerateUserWithAddressAndRoles())
+                .mapToObj(i -> TestDataGenerator.generateUserWithAddressAndRoles())
                 .collect(toList());
     }
 
     @Override
     public User findByEmail(String email) {
-        User user = TestDataGenerator.getnerateUserWithAddressAndRoles();
+        User user = TestDataGenerator.generateUserWithAddressAndRoles();
         user.getCredentials().setEmail(email);
         return user;
     }

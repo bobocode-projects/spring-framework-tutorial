@@ -1,4 +1,4 @@
-package com.bobocode;
+package com.bobocode.configs;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 

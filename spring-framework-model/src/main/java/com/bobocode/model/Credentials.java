@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 
 @Data
 @EqualsAndHashCode(of = "email")
+@ToString(exclude = {"lastModifiedPassword"})
 public class Credentials {
     private String email;
     private String password;

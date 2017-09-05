@@ -7,11 +7,15 @@ import io.codearte.jfairy.producer.person.Person;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Random;
 import java.util.Set;
 import java.util.function.Predicate;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
+import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
 
 public class TestDataGenerator {
@@ -74,11 +78,24 @@ public class TestDataGenerator {
         return address;
     }
 
-    public static User getnerateUserWithAddressAndRoles(){
+    public static User generateUserWithAddressAndRoles(){
         User user = generateUser();
         user.setAddress(generateAddess());
         user.setRoles(generateRoleSet());
         return user;
+    }
+
+    public static List<User> generateUserList(int maxSize){
+        Random random = new Random();
+        int size = random.nextInt(maxSize);
+
+        return LongStream.rangeClosed(1L, size)
+                .mapToObj(i-> {
+                    User user = generateUserWithAddressAndRoles();
+                    user.setId(i);
+                    return user;
+                })
+                .collect(toList());
     }
 
 
