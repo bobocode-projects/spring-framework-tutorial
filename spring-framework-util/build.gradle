@@ -1,0 +1,12 @@
+group 'com.bobocode'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+dependencies {
+    compile project(':spring-framework-model')
+    compile 'io.codearte.jfairy:jfairy:0.5.7'
+}
+

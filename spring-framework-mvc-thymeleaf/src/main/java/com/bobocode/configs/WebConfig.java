@@ -1,9 +1,8 @@
 package com.bobocode.configs;
 
 
-import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -19,14 +18,15 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
 @Configuration
 @ComponentScan(basePackages = "com.bobocode.controller")
 @EnableWebMvc
-public class WebConfig implements ApplicationContextAware {
+public class WebConfig {
 
+    @Autowired
     ApplicationContext applicationContext;
 
     @Bean
-    public ViewResolver viewResolver() {
+    public ViewResolver viewResolver(TemplateEngine templateEngine) {
         ThymeleafViewResolver resolver = new ThymeleafViewResolver();
-        resolver.setTemplateEngine(templateEngine());
+        resolver.setTemplateEngine(templateEngine);
         resolver.setCharacterEncoding("UTF-8");
         return resolver;
     }
@@ -46,10 +46,5 @@ public class WebConfig implements ApplicationContextAware {
         resolver.setSuffix(".html");
         resolver.setTemplateMode(TemplateMode.HTML);
         return resolver;
-    }
-
-    @Override
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.applicationContext = applicationContext;
     }
 }
