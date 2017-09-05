@@ -7,4 +7,6 @@ include 'spring-framework-model'
 include 'spring-framework-ioc-task'
 include 'spring-framework-mvc-task'
 include 'spring-framework-util'
+include 'spring-framework-rest-basics'
+include 'spring-framework-aop-basics'
 
