@@ -5,4 +5,9 @@ This application is based on two abstraction `StringConsumerService`, and `Sprin
  
  Your job is to **configure application context**, so the `StringConsumerService#comnume()` will print a spring in upper case
   with a space after each letter. See details in the 'todo' code comments. An entry point is a main class `AppContextTaskConfig`
+  
+  _See related examples:_
+ * https://github.com/BobocodeCourse/spring-framework/tree/master/spring-framework-ioc-basics
+ * https://github.com/BobocodeCourse/spring-framework/tree/master/spring-framework-ioc-advanced
+   
  
