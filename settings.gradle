@@ -4,4 +4,5 @@ include 'spring-framework-mvc-basics'
 include 'spring-framework-ioc-advanced'
 include 'spring-framework-mvc-thymeleaf'
 include 'spring-framework-model'
+include 'spring-framework-ioc-task'
 

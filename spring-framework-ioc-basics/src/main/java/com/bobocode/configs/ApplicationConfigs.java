@@ -1,16 +1,20 @@
 package com.bobocode.configs;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Component;
 
 /**
- * This class provides a  @{@link Configuration} for a Spring container. This configs specify which classes (in which package)
- * should be scanned by the container. To specify the package we use @{@link ComponentScan}.
+ * This class specify application context configuration. Basically, it's all about which instances of which classes
+ * should be created and registered in the context. An instance that is registered int the context is called 'bean'.
  *
- * The container will discover specified package and its sub-folders, to find
- * all classes marked @{@link Component}. For each component Spring should create a bean (an instance of the class)
- * marked as component)
+ * To tell the container, which bean should be created, you could either specify packages to scan using @{@link ComponentScan},
+ * or declare your own beans using @{@link Bean}. When you use @{@link ComponentScan} the container will discover
+ * specified package and its sub-folders, to find all classes marked @{@link Component}.
+ *
+ * If you want to import other configs from Java class or XML file, you could use @{@link org.springframework.context.annotation.Import}
+ * and @{@link org.springframework.context.annotation.ImportResource} accordingly
  */
 @Configuration
 @ComponentScan(basePackages = "com.bobocode")
