@@ -8,4 +8,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @ComponentScan(basePackages = "com.bobocode.web.controller")
 @EnableWebMvc
 public class WebConfig {
+
+    //todo: configure view resolver for JSP pages
+
 }

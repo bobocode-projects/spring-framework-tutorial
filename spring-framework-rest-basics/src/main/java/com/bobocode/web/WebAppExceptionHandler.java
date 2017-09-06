@@ -1,4 +1,4 @@
-package com.bobocode.controller;
+package com.bobocode.web;
 
 import com.bobocode.exception.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
-public class UserControllerAdvice {
+public class WebAppExceptionHandler {
 
     @ExceptionHandler(EntityNotFoundException.class)
     public ResponseEntity<?> handleEntityNotFound(EntityNotFoundException e){

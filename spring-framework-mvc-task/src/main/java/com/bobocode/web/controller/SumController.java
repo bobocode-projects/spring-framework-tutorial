@@ -1,4 +1,4 @@
-package com.bobocode.controller;
+package com.bobocode.web.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

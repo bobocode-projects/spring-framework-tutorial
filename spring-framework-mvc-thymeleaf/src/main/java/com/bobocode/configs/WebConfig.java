@@ -16,7 +16,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 
 @Configuration
-@ComponentScan(basePackages = "com.bobocode.controller")
+@ComponentScan(basePackages = "com.bobocode.web.controller")
 @EnableWebMvc
 public class WebConfig {
 

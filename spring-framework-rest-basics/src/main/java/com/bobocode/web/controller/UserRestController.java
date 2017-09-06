@@ -1,4 +1,4 @@
-package com.bobocode.controller;
+package com.bobocode.web.controller;
 
 import com.bobocode.model.User;
 import com.bobocode.service.UserService;

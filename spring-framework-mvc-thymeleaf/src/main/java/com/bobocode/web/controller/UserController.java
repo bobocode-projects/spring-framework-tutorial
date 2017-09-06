@@ -1,6 +1,7 @@
-package com.bobocode.controller;
+package com.bobocode.web.controller;
 
 import com.bobocode.model.User;
+import com.bobocode.util.TestDataGenerator;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,10 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
-import java.util.stream.IntStream;
-
-import static com.bobocode.util.TestDataGenerator.getnerateUserWithAddressAndRoles;
-import static java.util.stream.Collectors.toList;
 
 @Controller
 @RequestMapping("/users")
@@ -20,11 +17,10 @@ public class UserController {
 
     @GetMapping("/{count}")
     public String generateUserList(@PathVariable int count, Model model) {
-        List<User> userList = IntStream.range(1, count)
-                .mapToObj(i -> getnerateUserWithAddressAndRoles())
-                .collect(toList());
 
-        model.addAttribute(userList);
+        List<User> userList = TestDataGenerator.generateUserList(count);
+
+        model.addAttribute("userList", userList);
         return "users";
     }
 
