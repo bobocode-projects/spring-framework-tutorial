@@ -23,19 +23,19 @@ public class UserServiceAspects {
 
     @Before("findFromUserService()")
     public void beforeFind() {
-        System.out.println("*** AOP *** Find from UserService");
+        System.out.println("*** AOP - BEFORE *** Find from UserService");
     }
 
     @After("findFromUserService() && target(service)")
     public void afterFindUser(JoinPoint joinPoint, UserService service) {
         String methodName = joinPoint.getSignature().getName();
         String className = service.getClass().getName();
-        System.out.println("*** AOP *** Got information using method " + methodName + " of class " + className);
+        System.out.println("*** AOP - AFTER *** Got information using method " + methodName + " of class " + className);
     }
 
     @AfterReturning(value = "execution(* com.bobocode.service.UserService.findAllUsers(..))", returning = "users")
     public void afterReturningUserList(List<User> users) {
-        System.out.println("*** AOP *** Returned " + users.size() + " users");
+        System.out.println("*** AOP - AFTER RETURNING *** Returned " + users.size() + " users");
     }
 
 }
