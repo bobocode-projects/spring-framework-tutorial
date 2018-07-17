@@ -10,11 +10,15 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * Application context that is built using XML configuration.
  */
 public class XmlConfigsApplicationContextExample {
+    private static AccountDao accountDao;
+
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
-        AccountDao accountDao = context.getBean(AccountDao.class);
-
+        init();
         accountDao.getAllAccounts().stream().map(Account::getEmail).forEach(System.out::println);
+    }
 
+    private static void init(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("application-context.xml");
+        accountDao = context.getBean(AccountDao.class);
     }
 }

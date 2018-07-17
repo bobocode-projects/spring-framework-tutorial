@@ -3,14 +3,9 @@ package com.bobocode;
 
 import com.bobocode.configs.ApplicationConfigs;
 import com.bobocode.dao.AccountDao;
-import com.bobocode.model.Account;
 import com.bobocode.service.AccountService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
-import java.time.LocalDate;
-
-import static java.time.Period.between;
 
 /**
  * Application context that is built using annotation based configuration.
@@ -21,14 +16,15 @@ import static java.time.Period.between;
  * where it is requested.
  */
 public class DependencyInjectionExample {
+    private static AccountService accountService;
+
     public static void main(String[] args) {
+        init();
+        accountService.findOldestClient().ifPresent(System.out::println);
+    }
+
+    private static void init(){
         ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfigs.class);
-        AccountService accountService = context.getBean(AccountService.class);
-
-        Account oldestClient = accountService.findOldestClient();
-
-        System.out.println(oldestClient.getFirstName() + " "
-                + oldestClient.getLastName()
-                + ", age " + between(oldestClient.getBirthday(), LocalDate.now()).getYears());
+        accountService = context.getBean(AccountService.class);
     }
 }
