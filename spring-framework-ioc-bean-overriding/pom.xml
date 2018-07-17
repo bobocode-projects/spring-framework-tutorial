@@ -9,7 +9,7 @@
         <artifactId>spring-framework-tutorial</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>spring-framework-ioc-advanced</artifactId>
+    <artifactId>spring-framework-ioc-bean-overriding</artifactId>
 
 
 

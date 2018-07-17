@@ -14,7 +14,7 @@ public class XmlConfigsApplicationContextExample {
 
     public static void main(String[] args) {
         init();
-        accountDao.getAllAccounts().stream().map(Account::getEmail).forEach(System.out::println);
+        accountDao.getAllAccounts().forEach(System.out::println);
     }
 
     private static void init(){

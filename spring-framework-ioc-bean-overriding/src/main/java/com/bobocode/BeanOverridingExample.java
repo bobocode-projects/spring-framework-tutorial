@@ -7,10 +7,15 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class BeanOverridingExample {
-    public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(MainConfigs.class);
+    private static TalkingService talkingService;
 
-        TalkingService talkingService = context.getBean(TalkingService.class);
+    public static void main(String[] args) {
+        init();
         System.out.println(talkingService.saySomething());
+    }
+
+    private static void init() {
+        ApplicationContext context = new AnnotationConfigApplicationContext(MainConfigs.class);
+        talkingService = context.getBean(TalkingService.class);
     }
 }
