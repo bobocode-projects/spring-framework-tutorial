@@ -16,7 +16,6 @@
         <module>aop-basics</module>
         <module>mvc-basics</module>
         <module>rest-basics</module>
-        <module>spring-framework-ioc-bean-overriding</module>
     </modules>
 
     <properties>
