@@ -10,13 +10,13 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>spring-framework-ioc-basics</module>
+        <module>spring-framework-tutorial-model</module>
+        <module>spring-framework-tutorial-util</module>
+        <module>ioc-basics</module>
+        <module>aop-basics</module>
+        <module>mvc-basics</module>
+        <module>rest-basics</module>
         <module>spring-framework-ioc-bean-overriding</module>
-        <module>spring-framework-aop-basics</module>
-        <module>spring-framework-model</module>
-        <module>spring-framework-mvc-basics</module>
-        <module>spring-framework-rest-basics</module>
-        <module>spring-framework-util</module>
     </modules>
 
     <properties>
