@@ -16,6 +16,7 @@
         <module>aop-basics</module>
         <module>mvc-basics</module>
         <module>rest-basics</module>
+        <module>jpa-tx-management</module>
     </modules>
 
     <properties>
@@ -32,6 +33,11 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
+            <version>5.0.7.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
             <version>5.0.7.RELEASE</version>
         </dependency>
         <dependency>

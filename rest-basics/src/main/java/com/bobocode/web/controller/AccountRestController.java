@@ -3,11 +3,8 @@ package com.bobocode.web.controller;
 import com.bobocode.model.Account;
 import com.bobocode.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 

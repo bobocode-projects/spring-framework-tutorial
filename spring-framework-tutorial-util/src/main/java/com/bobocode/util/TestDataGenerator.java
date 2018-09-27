@@ -115,14 +115,14 @@ public class TestDataGenerator {
                 person.getDateOfBirth().getDayOfMonth()));
         fakeAccount.setGender(Gender.valueOf(person.getSex().name()));
         fakeAccount.setBalance(BigDecimal.valueOf(random.nextInt(200_000)));
-        fakeAccount.setCreationDate(LocalDateTime.now());
+        fakeAccount.setCreationTime(LocalDateTime.now());
 
         return fakeAccount;
     }
 
     public static List<Account> getAccountList(int size){
-        return range(0, size)
-                .mapToObj(i -> getAccount())
+        return Stream.generate(TestDataGenerator::getAccount)
+                .limit(size)
                 .collect(toList());
     }
 
