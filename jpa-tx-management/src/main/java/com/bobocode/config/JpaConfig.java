@@ -14,7 +14,7 @@ import javax.sql.DataSource;
 @Configuration
 public class JpaConfig {
     @Bean
-    DataSource testDataSource() {
+    public DataSource dataSource() {
         return new EmbeddedDatabaseBuilder()
                 .setType(EmbeddedDatabaseType.H2)
                 .setName("bobocodeDB")
@@ -22,22 +22,21 @@ public class JpaConfig {
     }
 
     @Bean
-    JpaVendorAdapter testJpaVendorAdapter() {
+    public JpaVendorAdapter jpaVendorAdapter() {
         HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
         adapter.setDatabase(Database.H2);
         adapter.setShowSql(true);
-        adapter.setGenerateDdl(true);
-        adapter.setDatabasePlatform("org.hibernate.dialect.H2Dialect");
+        adapter.setGenerateDdl(true); // this sets hibernate.hbm2ddl.auto=update
         return adapter;
     }
 
     @Bean("entityManagerFactory")
-    LocalContainerEntityManagerFactoryBean localContainerEMF(DataSource dataSource, JpaVendorAdapter jpaVendorAdapter) {
+    public LocalContainerEntityManagerFactoryBean localContainerEMF(DataSource dataSource, JpaVendorAdapter jpaVendorAdapter) {
         LocalContainerEntityManagerFactoryBean lcmfb = new LocalContainerEntityManagerFactoryBean();
         lcmfb.setDataSource(dataSource);
         lcmfb.setJpaVendorAdapter(jpaVendorAdapter);
-        lcmfb.setPersistenceUnitName("bobocode");
-        lcmfb.setPackagesToScan("com.bobocode.model");
+        lcmfb.setPersistenceUnitName("basicEntities");
+        lcmfb.setPackagesToScan("com.bobocode.model");// JPA entity classes will be loaded from this package
         return lcmfb;
     }
 
@@ -45,7 +44,7 @@ public class JpaConfig {
     /*@Bean("entityManagerFactory")
     public LocalEntityManagerFactoryBean entityManagerFactoryBean() {
         LocalEntityManagerFactoryBean emfb = new LocalEntityManagerFactoryBean();
-        emfb.setPersistenceUnitName("bobocode");
+        emfb.setPersistenceUnitName("basicEntities");
         return emfb;
     }*/
 }
