@@ -10,9 +10,9 @@ import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Repository
-@Transactional
+@Transactional // wraps object with transaction proxy using Spring AOP. Is applied to all public methods of a class
 public class JpaAccountDao implements AccountDao {
-    @PersistenceContext
+    @PersistenceContext // injects a EntityManager proxy, a "shared EntityManager" that is related to current transaction
     private EntityManager entityManager;
 
     @Override

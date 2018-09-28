@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Service
-@Transactional
+@Transactional// wraps object with transaction proxy using Spring AOP. Is applied to all public methods of a class
 public class AccountService {
     private AccountDao accountDao;
 

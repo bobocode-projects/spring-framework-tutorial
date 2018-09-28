@@ -32,12 +32,12 @@ public class JpaConfig {
 
     @Bean("entityManagerFactory")
     public LocalContainerEntityManagerFactoryBean localContainerEMF(DataSource dataSource, JpaVendorAdapter jpaVendorAdapter) {
-        LocalContainerEntityManagerFactoryBean lcmfb = new LocalContainerEntityManagerFactoryBean();
-        lcmfb.setDataSource(dataSource);
-        lcmfb.setJpaVendorAdapter(jpaVendorAdapter);
-        lcmfb.setPersistenceUnitName("basicEntities");
-        lcmfb.setPackagesToScan("com.bobocode.model");// JPA entity classes will be loaded from this package
-        return lcmfb;
+        LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
+        emf.setDataSource(dataSource);
+        emf.setJpaVendorAdapter(jpaVendorAdapter);
+        emf.setPersistenceUnitName("basicEntities");
+        emf.setPackagesToScan("com.bobocode.model");// JPA entity classes will be loaded from this package
+        return emf;
     }
 
     // todo: instead of configuring previous three beans you can use file META-INF/persistence.xml and the following bean
