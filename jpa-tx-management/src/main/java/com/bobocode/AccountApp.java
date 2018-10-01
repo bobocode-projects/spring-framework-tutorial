@@ -19,7 +19,7 @@ public class AccountApp {
     public static void main(String[] args) {
         init();
         accountService.printAllAccounts();
-        accountService.withdraw(1L, BigDecimal.valueOf(1_000_000));
+        accountService.withdraw(1L, BigDecimal.valueOf(1000));
         accountService.printAllAccounts();
     }
 

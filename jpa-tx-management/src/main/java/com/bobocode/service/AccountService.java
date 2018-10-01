@@ -23,7 +23,7 @@ public class AccountService {
 
     public void withdraw(long accountId, BigDecimal value) {
         Account account = accountDao.findById(accountId);
-        account.setBalance(account.getBalance().add(value));
+        account.setBalance(account.getBalance().subtract(value));
     }
 
     @Transactional(readOnly = true)
