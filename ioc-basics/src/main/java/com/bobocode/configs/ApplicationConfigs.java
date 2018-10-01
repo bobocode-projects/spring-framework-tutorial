@@ -1,7 +1,5 @@
 package com.bobocode.configs;
 
-import com.bobocode.dao.AccountDao;
-import com.bobocode.dao.impl.FakeAccountDaoImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -22,8 +20,4 @@ import org.springframework.stereotype.Component;
 @ComponentScan(basePackages = "com.bobocode")
 public class ApplicationConfigs {
 
-    @Bean
-    public AccountDao fakeAccountDao() {
-        return new FakeAccountDaoImpl();
-    }
 }
