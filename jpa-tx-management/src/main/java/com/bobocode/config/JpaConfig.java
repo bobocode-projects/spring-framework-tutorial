@@ -35,7 +35,7 @@ public class JpaConfig {
         LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
         emf.setDataSource(dataSource);
         emf.setJpaVendorAdapter(jpaVendorAdapter);
-        emf.setPersistenceUnitName("basicEntities");
+        emf.setPersistenceUnitName("basicEntities"); // by default Spring will name "default"
         emf.setPackagesToScan("com.bobocode.model");// JPA entity classes will be loaded from this package
         return emf;
     }
