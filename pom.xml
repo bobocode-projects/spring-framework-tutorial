@@ -18,6 +18,7 @@
         <module>rest-basics</module>
         <module>jpa-tx-management</module>
         <module>bean-overriding</module>
+        <module>profiles-and-properties</module>
     </modules>
 
     <properties>
