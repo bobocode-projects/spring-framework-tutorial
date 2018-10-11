@@ -19,6 +19,7 @@
         <module>jpa-tx-management</module>
         <module>bean-overriding</module>
         <module>profiles-and-properties</module>
+        <module>advanced-ioc</module>
     </modules>
 
     <properties>
