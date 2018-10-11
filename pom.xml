@@ -17,6 +17,7 @@
         <module>mvc-basics</module>
         <module>rest-basics</module>
         <module>jpa-tx-management</module>
+        <module>bean-overriding</module>
     </modules>
 
     <properties>
