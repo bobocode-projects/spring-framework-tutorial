@@ -1,6 +1,5 @@
 package com.bobocode.model;
 
-import com.bobocode.model.Gender;
 import lombok.*;
 
 import javax.persistence.*;

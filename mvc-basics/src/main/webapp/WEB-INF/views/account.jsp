@@ -16,6 +16,7 @@
     <p>${account.email}</p>
     <p>${account.birthday}</p>
     <a class="btn btn-primary btn-lg" href="/accounts/generate" role="button">Generate</a>
+    <a class="btn btn-secondary btn-lg" href="/accounts/add" role="button">Enter data</a>
 </div>
 </body>
 </html>
