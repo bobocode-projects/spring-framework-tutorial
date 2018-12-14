@@ -48,7 +48,7 @@ public class JpaConfig {
         return new HikariDataSource(config);
     }
 
-    @Bean
+    @Bean("dataSource")
     @Profile("prod")
     public HikariConfig hikariConfig() {
         HikariConfig hikariConfig = new HikariConfig();
